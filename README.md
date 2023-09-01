@@ -1,3 +1,15 @@
+# General remarks
+
+```
+npm install
+npm start
+```
+
+- In this project, I used embedded styles. Normally, it is not a good practice, I used now just for clarity, as the styles here are required for the functionality (being scrollable, etc.).
+- Ths current solution is suboptimal, I let myself to create a suboptimal solution, to be able to add comments for performance. I think, the most performant option is using the anchor-based approach, so in prod, I would replace the event based scrolling with that one. As for performance, I prefetch data even at 80% scroll position.
+- I used one api with two item builders on on top of that (displaying images, and displaying some textual data). It demonstrates, that the scrolling container is generic enough. As I use interfaces, I can add any data loader, so I can combine any data sources with any item builders.
+- For more performance, I could as well introduce some cachiong, a shared state between the two views holding the already fetched pages, as currently, they are fetched for both views idividually.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
